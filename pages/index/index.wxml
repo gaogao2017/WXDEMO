@@ -1,5 +1,6 @@
 <!--index.wxml-->
 <view class="container">
+  <button bindtap="gototest">进入测试页面</button>
   <view class="userinfo">
     <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
     <block wx:else>
@@ -10,4 +11,11 @@
   <view class="usermotto">
     <text class="user-motto">{{motto}}</text>
   </view>
+  <!-- <switch wx:for="{{arr}}" wx:key="{{item.unique}}">{{item.id}}</switch> -->
+  <button bindtap="add">添加元素</button>
+  <template name="switchTel">
+    <switch wx:for="{{arr}}" wx:key="{{item.unique}}">{{item.id}}</switch>
+  </template>
+  <template is="switchTel" data="{{arr}}"></template>
+  <image bindload="loadImg" src="//icon.xgo-img.com.cn/mainpage/19060416/bg.jpg"/>
 </view>

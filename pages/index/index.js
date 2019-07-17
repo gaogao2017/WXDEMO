@@ -1,19 +1,32 @@
 //index.js
 //获取应用实例
 const app = getApp()
-
+require('../../utils/a.js');
+console.log('this is index');
+require('../../utils/b.js');
 Page({
   data: {
     motto: 'Hello World',
     userInfo: {},
     hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    canIUse: wx.canIUse('button.open-type.getUserInfo'),
+    arr: [{ id: 1, unique: 'unique_1' }, { id: 2, unique: 'unique_2' }]
+  },
+  //添加数据
+  add:function(){
+    console.log(this.data.arr)
+    this.setData({
+      arr:[...this.data.arr,{id:3,unique:'unique_3'}]
+    })
   },
   //事件处理函数
   bindViewTap: function() {
     wx.navigateTo({
       url: '../logs/logs'
     })
+  },
+  loadImg:function(event){
+    console.log(event.detail.width)
   },
   onLoad: function () {
     if (app.globalData.userInfo) {
@@ -49,6 +62,11 @@ Page({
     this.setData({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
+    })
+  },
+  gototest(){
+    wx.navigateTo({
+      url: '../test/test',
     })
   }
 })
