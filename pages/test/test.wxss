@@ -1,1 +1,15 @@
 /* page/test/test.wxss */
+.animation{
+  width: 400rpx;
+  height: 100rpx;
+  background-color: rgb(202, 66, 66);
+  margin: 200rpx 300rpx;
+}
+
+.btn{
+ display: flex;
+ justify-content: center;
+ align-items: center;
+  position: absolute;
+  bottom: 10rpx;
+}

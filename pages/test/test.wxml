@@ -1,2 +1,5 @@
 <!--page/test/test.wxml-->
-<text>page/test/test.wxml</text>
+<view>
+  <view animation="{{animation}}" class='animation'>我是单个动画组旋转动画</view>
+</view>
+<button bindtap='rotate' class='btn' type='primary'>旋转一下</button>

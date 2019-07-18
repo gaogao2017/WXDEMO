@@ -68,5 +68,78 @@ Page({
     wx.navigateTo({
       url: '../test/test',
     })
+  },
+  downloadImg(){
+    downloadFile('https://img2.xgo-img.com.cn/line_head/3/240x180/5c3561d619805.jpg')
+    // wx.downloadFile({ url:'https://img2.xgo-img.com.cn/line_head/3/240x180/5c3561d619805.jpg',complete(res){
+    //   wx.saveImageToPhotosAlbum({
+    //     filePath: res.tempFilePath,
+    //     complete(res) {
+    //       console.log(222,res)
+    //     }
+    //   })
+    //   console.log(111,res)
+    // }})
+    //wx.saveFile({ url: 'https://img2.xgo-img.com.cn/line_head/3/240x180/5c3561d619805.jpg'})
   }
 })
+
+function downloadFile(fileUrl, type = 'img'){
+  wx.downloadFile({
+    url: fileUrl, complete(res) {
+    if(res.statusCode==200){
+      //文件临时下载到本地
+      if(type=='img'){
+        wx.saveImageToPhotosAlbum({
+          filePath: res.tempFilePath,
+          success(res) {
+            //下载成功
+            wx.showToast({
+              title: '下载成功'
+            })
+            console.log(res)
+            
+          },
+          fail(res){
+            //下载失败
+            wx.showToast({
+              title: `下载失败`,
+              icon:'none'
+            })
+            console.log(res)
+            
+          }
+        })
+      }else{
+        wx.saveVideoToPhotosAlbum({
+          filePath: res.tempFilePath,
+          success(res) {
+            //下载成功
+            wx.showToast({
+              title: '下载成功'
+            })
+            console.log(res)
+
+          },
+          fail(res) {
+            //下载失败
+            wx.showToast({
+              title: `下载失败`,
+              icon: 'none'
+            })
+            console.log(res)
+
+          }
+        })
+      }
+    }else{
+      //临时下载失败
+      wx.showToast({
+        title: `下载失败`,
+        icon:'none'
+      })
+    }
+      
+    }
+  })
+}
