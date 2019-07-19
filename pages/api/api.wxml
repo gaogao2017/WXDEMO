@@ -1,0 +1,11 @@
+<!--pages/api/api.wxml-->
+<button bindtap="getLocation">获取地理位置</button>
+<button bindtap="choosePhone">选择照片</button>
+<button bindtap="chooseFile">选择文件</button>
+<button bindtap="compressImg">压缩图片</button>
+<button bindtap="priviewImage">显示图片</button>
+<button bindtap="gotoMap">进入地图页</button>
+<button bindtap="addStorage">存储数据</button>
+<button bindtap="getStorage">获取数据</button>
+<button bindtap="removeStorage">删除数据</button>
+<button bindtap="downloadImg" type="primary">下载图片</button>
