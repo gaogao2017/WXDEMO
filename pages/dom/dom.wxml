@@ -70,8 +70,14 @@
     <label for="multiSelect" style="float:left; margin-right:10rpx;">多列选择器</label>
     <picker mode="multiSelector"  range="{{list1}}" style="display:inline-block; text-align:center;width:400rpx;height:60rpx;border:1px solid #ccc;" value="{{multiIndex}}" range-key="name" bindchange="multiSelectChange" bindcolumnchange="multiSelectColChange">{{list1[0][multiIndex[0]]['name']}}-{{list1[1][multiIndex[1]]['name']}}</picker>
   </view>
-  {{multiIndex}};
-  multiSelector
+
+<view class="area">
+  <view class="title">单选按钮</view>
+  <radio-group style="border:1px solid #ccc;" wx:for="{{radioList}}">
+    <radio value="{{item.id}}">{{item.name}}</radio>
+  </radio-group>
+</view>
+
   
 </view>
 

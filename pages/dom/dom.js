@@ -13,7 +13,15 @@ Page({
     index:0,
     list:['请选择','111','222','333','444','555'],
     multiIndex:[0,0],
-    list1: [[{ id: 0, name: '请选择', data: [{ id: 0, name: '请选择' }] }, { id: 1, name: '111', data: [{ id: 0, name: 'a' }, { id: 1, name: 'b' }] }, { id: 2, name: '222', data: [{ id: 0, name: 'c' }, { id: 1, name: 'd' }] }], [{ id: 0, name: '请选择' }]]
+    list1: [[{ id: 0, name: '请选择', data: [{ id: 0, name: '请选择' }] }, { id: 1, name: '111', data: [{ id: 0, name: 'a' }, { id: 1, name: 'b' }] }, { id: 2, name: '222', data: [{ id: 0, name: 'c' }, { id: 1, name: 'd' }] }], [{ id: 0, name: '请选择' }]],
+    radioList: [
+      { id: 'USA', name: '美国' },
+      { id: 'CHN', name: '中国', checked: 'true' },
+      { id: 'BRA', name: '巴西' },
+      { id: 'JPN', name: '日本' },
+      { id: 'ENG', name: '英国' },
+      { id: 'TUR', name: '法国' },
+    ]
   },
 
   /**
