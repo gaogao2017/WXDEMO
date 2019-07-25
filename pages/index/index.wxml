@@ -1,5 +1,6 @@
 <!--index.wxml-->
 <view class="container">
+  <button bindtap="gotoDom">进入组件页</button>
   <button bindtap="gotoVideo">进入视频播放页</button>
   <button bindtap="gotoApi">进入Api</button>
   <button bindtap="gototest">进入测试页面</button>

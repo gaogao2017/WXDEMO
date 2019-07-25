@@ -1,0 +1,78 @@
+<!--pages/dom/dom.wxml-->
+<button bindtap="gotoMultiSelectDom">跳转到多列选择器</button>
+<view class="area">
+  <view class="title">movable-area movable-view 可移动区域运用</view>
+  <movable-area class="wrap">
+    <movable-view x="{{x}}" y="{{y}}" direction="all" class="moveItem" bindchange="showMoveData">
+    Item
+    </movable-view>
+  </movable-area>
+  <view class="showData">
+   移动坐标 x:{{x}},y:{{y}}
+  </view>
+</view>
+
+<view class="area">
+  <view class="title">cover-view cover-image覆盖在原生组件上的元素</view>
+  <map style="width:100%;height:400rpx;" latitude="23.099994" longitude="113.324520">
+    <cover-image class="coverImg" src="https://img2.xgo-img.com.cn/line_head/3/240x180/5c3561d619805.jpg"></cover-image>
+    <cover-view class="coverView">图片</cover-view>
+  </map>
+</view>
+
+<view class="area">
+  <view class="title">scroll-view 可滚动的容器</view>
+  <scroll-view class="scrollView" scroll-y="true" scroll-into-view="{{scrollTarget}}">
+    <view id="A" class="scrollView_item bg_red">A</view>
+    <view id="B" class="scrollView_item bg_green">B</view>
+    <view id="C" class="scrollView_item bg_gray">C</view>
+  </scroll-view>
+  <view>
+    滚动到<input class="txt" type="text" value="" bindinput="changeTarget" style="display:inline-block;"></input>
+  </view>
+</view>
+
+
+<view class="area">
+  <view class="title">swiper 焦点图容器</view>
+  <swiper class="swiper" indicator-dots="true">
+    <swiper-item class="bg_red">1</swiper-item>
+    <swiper-item class="bg_green">2</swiper-item>
+    <swiper-item class="bg_gray">3</swiper-item>
+  </swiper>
+</view>
+
+
+<view class="area">
+  <view class="title">icon</view>
+  <icon type="success" size="80rpx" color="red"></icon>
+</view>
+
+
+<view class="area">
+  <view class="title">progress</view>
+  <progress percent="{{percent}}"  stroke-width="20"></progress>
+</view>
+
+<view class="area">
+  <view class="title">表单</view>
+  <button open-type="getUserInfo" bindgetuserinfo="getUserInfo">获取用户信息</button>
+  <input type="text"  placeholder="请输入信息" placeholder-class="pc" style="width:90%;height:30rpx;border:1px solid #ccc;"></input>
+</view>
+
+<view class="area">
+  <view class="title">picker 下拉框组件</view>
+  <view>
+    <label for="signSelect" style="float:left; margin-right:10rpx;">单一选择器</label>
+    <picker  range="{{list}}" style="display:inline-block; text-align:center;width:400rpx;height:60rpx;border:1px solid #ccc;" value="{{index}}" bindchange="signSelectChange">{{list[index]}}</picker>
+  </view>
+   <view>
+    <label for="multiSelect" style="float:left; margin-right:10rpx;">多列选择器</label>
+    <picker mode="multiSelector"  range="{{list1}}" style="display:inline-block; text-align:center;width:400rpx;height:60rpx;border:1px solid #ccc;" value="{{multiIndex}}" range-key="name" bindchange="multiSelectChange" bindcolumnchange="multiSelectColChange">{{list1[0][multiIndex[0]]['name']}}-{{list1[1][multiIndex[1]]['name']}}</picker>
+  </view>
+  {{multiIndex}};
+  multiSelector
+  
+</view>
+
+<view class="test">fsdfsfsfsfdsf</view>

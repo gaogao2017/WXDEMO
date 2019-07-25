@@ -1,0 +1,97 @@
+/* pages/dom/dom.wxss */
+.area{
+  margin-bottom:50rpx;
+}
+.title{
+  font-size:30rpx;
+  font-weight: bold;
+}
+.wrap{
+  width:100%;
+  height:200px;
+  overflow: hidden;
+  border:2px solid #000;
+  box-sizing: border-box;
+}
+.moveItem{
+  width: 100rpx;
+  height:100rpx;
+  color:#fff;
+  background:#0f0;
+  text-align:center;
+  line-height:100rpx;
+
+}
+
+
+
+.coverImg{
+  width:300rpx;
+  height:auto;
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+}
+.coverView{
+  width:300rpx;
+  height:calc(300rpx/4*3) ;
+  text-align: center;
+  line-height: calc(300rpx/4*3);
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  z-index:5;
+  background:rgba(0,0,0,0.3);
+  color:#fff;
+}
+
+.scrollView{
+  width:100%;
+  height:400rpx;
+  border:2px solid #000;
+  box-sizing: border-box;
+}
+.scrollView_item{
+  position: relative;
+  display:flex;
+  width:100%;
+  height:400rpx;
+  /* text-align:center; */
+  color:#fff;
+  
+  align-items:center;
+  justify-content: center;
+}
+.txt{
+  border:1px solid #ccc;
+  vertical-align: middle;
+  margin-left:5px;
+  width:100rpx;
+
+}
+
+.swiper{
+  width:100%;
+  height:400rpx;
+  border:2px solid #000;
+  box-sizing: border-box;
+}
+.swiper swiper-item{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color:#fff;
+}
+.bg_red{
+background:#f00;
+}
+.bg_green{
+background:#0f0;
+}
+.bg_gray{
+background:#ddd;
+}
+
+.pc{font-size:28rpx;color:#ccc;}

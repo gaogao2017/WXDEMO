@@ -1,11 +1,15 @@
 {
   "pages": [
+    
+    "pages/dom/dom",
     "pages/index/index",
     "pages/logs/logs",
     "pages/test/test",
     "pages/map/map",
     "pages/video/video",
-    "pages/api/api"
+    "pages/api/api",
+   "pages/multiSelect/multiSelect"
+    
 
   ],
   "window": {

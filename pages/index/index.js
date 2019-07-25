@@ -78,6 +78,11 @@ Page({
     wx.navigateTo({
       url: '../video/video',
     })
+  },
+  gotoDom(){
+    wx.navigateTo({
+      url: '../dom/dom',
+    })
   }
   
 })
