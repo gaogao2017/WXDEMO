@@ -11,7 +11,8 @@
    "pages/multiSelect/multiSelect",
    "pages/audio/audio",
    "pages/camera/camera",
-   "pages/lazyloadImg/lazyloadImg"
+   "pages/lazyloadImg/lazyloadImg",
+   "pages/wxmlApi/wxmlApi"
     
 
   ],

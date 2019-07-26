@@ -1,4 +1,5 @@
 <!--pages/dom/dom.wxml-->
+<navigator url="../wxmlApi/wxmlApi"><button>WXML api</button></navigator>
 <navigator url="../audio/audio"><button>音频播放器</button></navigator>
 <navigator url="../camera/camera"><button>系统相机</button></navigator>
 <navigator url="../lazyloadImg/lazyloadImg"><button>图片延迟加载</button></navigator>

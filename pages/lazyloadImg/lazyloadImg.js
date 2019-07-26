@@ -248,12 +248,12 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    /**
-         * this - 当前对象
-         * this.data.lazyData - 数据源
-         * lazy_name - 数据名
-         * 加载图标 - https://img.alicdn.com/tps/i3/T1QYOyXqRaXXaY1rfd-32-32.gif
-         */
+/**
+     * this - 当前对象
+     * this.data.lazyData - 数据源
+     * lazy_name - 数据名
+     * 加载图标 - https://img.alicdn.com/tps/i3/T1QYOyXqRaXXaY1rfd-32-32.gif
+     */
     lazyImg(this, this.data.lazyData, 'lazyData', 'https://img.alicdn.com/tps/i3/T1QYOyXqRaXXaY1rfd-32-32.gif')
   },
 
