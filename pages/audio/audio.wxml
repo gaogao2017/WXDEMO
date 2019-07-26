@@ -1,0 +1,6 @@
+<!--pages/audio/audio.wxml-->
+<audio id="audio" poster="{{poster}}" name="{{name}}" src="{{src}}" author="{{author}}" controls loop></audio>
+<button bindtap="audioPlay">播放</button>
+<button bindtap="audioPause">暂停</button>
+<button bindtap="audioToTime">设置播放时间为14秒</button>
+<button bindtap="audioStart">重播</button>

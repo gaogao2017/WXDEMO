@@ -1,4 +1,7 @@
 <!--pages/dom/dom.wxml-->
+<navigator url="../audio/audio"><button>音频播放器</button></navigator>
+<navigator url="../camera/camera"><button>系统相机</button></navigator>
+<navigator url="../lazyloadImg/lazyloadImg"><button>图片延迟加载</button></navigator>
 <button bindtap="gotoMultiSelectDom">跳转到多列选择器</button>
 <view class="area">
   <view class="title">movable-area movable-view 可移动区域运用</view>
@@ -70,15 +73,41 @@
     <label for="multiSelect" style="float:left; margin-right:10rpx;">多列选择器</label>
     <picker mode="multiSelector"  range="{{list1}}" style="display:inline-block; text-align:center;width:400rpx;height:60rpx;border:1px solid #ccc;" value="{{multiIndex}}" range-key="name" bindchange="multiSelectChange" bindcolumnchange="multiSelectColChange">{{list1[0][multiIndex[0]]['name']}}-{{list1[1][multiIndex[1]]['name']}}</picker>
   </view>
+</view>
 
 <view class="area">
   <view class="title">单选按钮</view>
-  <radio-group style="border:1px solid #ccc;" wx:for="{{radioList}}">
-    <radio value="{{item.id}}">{{item.name}}</radio>
+  <radio-group bindchange="radioChange" style="border:1px solid #ccc;" wx:for="{{radioList}}">
+    <radio value="{{item.id}}" checked="{{item.checked}}">{{item.name}}</radio>
   </radio-group>
 </view>
-
   
+  
+<view class="area">
+  <view class="title">slider 滑动选择器</view>
+  <slider min="0" max="10" activeColor="red" show-value="true" bindchange="sliderChange"></slider>
 </view>
+
+<view class="area">
+  <view class="title">switch 开关选择器</view>
+  <switch type="switch" color="red" bindchange="switchChange">自动播放</switch>
+  <switch type="checkbox">自动暂停</switch>
+</view>
+
+
+<view class="area">
+  <view class="title">textarea 多行输入框</view>
+  <textarea placeholder="请输入内容" style="border:1px solid #ccc;"></textarea>
+</view>
+
+<view class="area">
+  <view class="title">navigator 导航组件</view>
+  <navigator url="../index/index">首页</navigator>
+  <navigator target="miniProgram" open-type="navigate" app-id="wx4f1b24bdc99fa23b"  version="release">打开58团车</navigator>
+  <navigator target="miniProgram" open-type="navigate" app-id="wx4f1b24bdc99fa23b" version="release">
+         <button type="default">打开小程序</button>
+        </navigator>
+</view>
+
 
 <view class="test">fsdfsfsfsfdsf</view>

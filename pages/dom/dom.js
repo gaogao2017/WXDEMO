@@ -134,5 +134,26 @@ Page({
     wx.navigateTo({
       url: '../multiSelect/multiSelect',
     })
+  },
+  radioChange(e){
+      let list = this.data.radioList;
+      list=list.map((item,index)=>{
+        if(item.id==e.detail.value){
+          item.checked=true;
+        }else{
+          item.checked=false;
+        }
+        return item;
+      })
+      this.setData({
+        radioList:list
+      })
+
+  },
+  sliderChange(e){
+    console.log('slider-value:',e.detail.value)
+  },
+  switchChange(e){
+    console.log('switch-value:',e.detail.value)
   }
   })

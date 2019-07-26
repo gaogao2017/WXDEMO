@@ -8,7 +8,10 @@
     "pages/map/map",
     "pages/video/video",
     "pages/api/api",
-   "pages/multiSelect/multiSelect"
+   "pages/multiSelect/multiSelect",
+   "pages/audio/audio",
+   "pages/camera/camera",
+   "pages/lazyloadImg/lazyloadImg"
     
 
   ],
