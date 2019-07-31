@@ -1,0 +1,2 @@
+<!--pages/webView/webView.wxml-->
+<web-view src="https://apps.m.58che.com/58/index.html"></web-view>

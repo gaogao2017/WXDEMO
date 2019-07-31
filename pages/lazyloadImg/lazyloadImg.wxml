@@ -1,6 +1,8 @@
 <!--pages/lazyloadImg/lazyloadImg.wxml-->
-<view class='item-{{index}}' wx:for="{{lazyData}}" wx:key="*this.src">
-  <image src='{{item.show? item.src : loadIcon}}' class='{{item.show? "active" : ""}}'></image>
-  <view>a-{{index}}</view>
-</view>
+<!-- <scroll-view scroll-y="true" id="wrap" style="height:700rpx;"> -->
+  <view class='lazyloadImg-{{index}}' wx:for="{{lazyloadImgData}}" wx:key="*this.src">
+    <image src='{{item.show? item.src : loadIcon}}' class='{{item.show? "active" : ""}}'></image>
+    <view>a-{{index}}</view>
+  </view>
+<!-- </scroll-view> -->
 

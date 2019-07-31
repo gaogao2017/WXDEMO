@@ -1,0 +1,10 @@
+<!--pages/wxs/wxs.wxml-->
+<wxs module="test">
+var aa=function(newValue, oldValue, ownerInstance, instance){
+  console.log('newValue',newValue)
+}
+module.exports.aa=aa;
+</wxs>
+<view prop="{{a}}" change:prop="{{test.aa}}">测试</view>
+<button bindtap="setA">改变a值</button>
+{{a}}

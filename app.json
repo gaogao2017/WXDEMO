@@ -12,7 +12,9 @@
    "pages/audio/audio",
    "pages/camera/camera",
    "pages/lazyloadImg/lazyloadImg",
-   "pages/wxmlApi/wxmlApi"
+   "pages/wxmlApi/wxmlApi",
+   "pages/webView/webView",
+   "pages/wxs/wxs"
     
 
   ],

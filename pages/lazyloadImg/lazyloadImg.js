@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-   lazyData: [{
+   lazyloadImgData: [{
       src: "https://gtd.alicdn.com/sns_logo/i1/TB124_3NXXXXXasXVXXSutbFXXX.jpg_240x240xz.jpg",
 
     },
@@ -248,13 +248,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-/**
-     * this - 当前对象
-     * this.data.lazyData - 数据源
-     * lazy_name - 数据名
-     * 加载图标 - https://img.alicdn.com/tps/i3/T1QYOyXqRaXXaY1rfd-32-32.gif
-     */
-    lazyImg(this, this.data.lazyData, 'lazyData', 'https://img.alicdn.com/tps/i3/T1QYOyXqRaXXaY1rfd-32-32.gif')
+    lazyImg(this)
   },
 
   /**
@@ -309,20 +303,39 @@ Page({
 
 
 /**
- * 数据名必须为:lazyData或其它名(与数据以及页面相同)
- *
- * 模拟数据：lazyData
- * 传输数据：_that,data(this,lazyData,lazy_name,loading_icon)
+ * 图片延迟加载函数 lazyImg(this,data,{opts})
+ * 参数说明：
+ * * _that:作用域  必填
+ * * opts 可配置参数 选填
+ * * * dataName:延迟加载图片数组在this.data中的对应字段名   默认值'lazyloadImgData' 
+ * * * placeholderImg:占位图   默认值'https://icon.xgo-img.com.cn/mainpage/16041815/domLoad.gif'
+ * * * lazyloadClass: 延迟加载图片类名   默认值'lazyloadImg'
+ * * * preloadHeight: 预加载高度        默认值 20
+ * * * scrollDom: 滚动加载容器          默认值 'page' 有两种方式页面滚动加载图片(page),指定滚动容器加载图片（#容器名）
  */
-const lazyImg = (_that, data, lazy_name, loading_icon) => {
+const lazyImg = (_that, { dataName='lazyloadImgData', placeholderImg = 'https://icon.xgo-img.com.cn/mainpage/16041815/domLoad.gif', lazyloadClass = "lazyloadImg", preloadHeight=20,scrollDom="page"}={}) => {
+  let observerFun = 'relativeToViewport',
+      relativeObj = '',
+      data = _that.data[dataName];
+  if (typeof _that == 'undefined' || Object.prototype.toString.apply(data).toLowerCase().indexOf('array')==-1 || data.length==0){
+    return false;
+  }
+  if (scrollDom!='page'){
+    //非页面滚动加载 指定区域滚动加载
+    observerFun='relativeTo';
+    relativeObj = scrollDom;
+  }
   for (let i = 0, len = data.length; i < len; i++) {
-    wx.createIntersectionObserver().relativeToViewport({
-      bottom: 20
-    }).observe('.item-' + i, (ret) => {
+    //监控每一个图片延迟加载元素与指定区域的交汇位置，
+    //针对页面滚动的 scrollDom=='page'情况，绑定relativeToViewport方法，预加载高度为preloadHeight，显示图片设置其图片属性对象 show为true 显示真实图片,否则show为false 显示占位图片
+    //针对指定容器滚动的 scrollDom!='page'情况，绑定relativeTo(scrollDom,{botton:preloadHeight})
+    wx.createIntersectionObserver()[observerFun](relativeObj,{
+      bottom: preloadHeight
+    }).observe('.' + lazyloadClass+'-'+i, (ret) => {
       ret.intersectionRatio > 0 ? data[i].show = true : '';
       _that.setData({
-        [lazy_name]: data,
-        loadIcon: loading_icon
+        [dataName]: data,
+        loadIcon: placeholderImg
       })
     })
   }
