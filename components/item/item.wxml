@@ -1,0 +1,2 @@
+<!--components/item/item.wxml-->
+<button class="loginBtn" data-a="111" bindtap="login">登录</button>

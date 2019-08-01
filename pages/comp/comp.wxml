@@ -1,0 +1,7 @@
+<!--pages/comp/comp.wxml-->
+<header id="header" style="position:relative;" prop-a="1" prop-b="2" bind:acceptHeader="acceptHeader">
+  Demo
+  <item class="fr" bind:acceptItem="acceptItem"></item>
+</header>
+
+<button bindtap="getHeaderData">获取header的data</button>

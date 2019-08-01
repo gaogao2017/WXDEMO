@@ -14,7 +14,8 @@
    "pages/lazyloadImg/lazyloadImg",
    "pages/wxmlApi/wxmlApi",
    "pages/webView/webView",
-   "pages/wxs/wxs"
+   "pages/wxs/wxs",
+   "pages/comp/comp"
     
 
   ],

@@ -1,0 +1,8 @@
+/* components/item/item.wxss */
+.loginBtn{
+  display:inline-block;
+  line-height:100%;
+  padding:20rpx;
+  font-size:28rpx;
+
+}

@@ -1,4 +1,5 @@
 <!--pages/dom/dom.wxml-->
+<navigator url="../comp/comp"><button>组件</button></navigator>
 <navigator url="../wxs/wxs"><button>wxs demo</button></navigator>
 <navigator url="../webView/webView"><button>内嵌H5页面</button></navigator>
 <navigator url="../map/map"><button>地图</button></navigator>

@@ -1,0 +1,16 @@
+/* components/header/header.wxss */
+:host{
+  /*组件基础样式 影响组件内部所有内容*/
+
+}
+.header{
+  position:relative;
+  width:100%;
+  height:80rpx;
+  line-height:80rpx;
+  text-align:center;
+  font-weight: bold;
+  font-size:36rpx;
+  border-bottom:1px solid #ccc;
+  margin-bottom:40rpx;
+}
