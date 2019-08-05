@@ -1,0 +1,23 @@
+{
+  "name": "wxdemo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gaogao2017/WXDEMO.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gaogao2017/WXDEMO/issues"
+  },
+  "homepage": "https://github.com/gaogao2017/WXDEMO#readme",
+  "dependencies": {
+    "miniprogram-recycle-view": "^0.1.0",
+    "miniprogram-slide-view": "0.0.4"
+  }
+}

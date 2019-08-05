@@ -1,0 +1,34 @@
+<!--pages/slideView/slideView.wxml-->
+<view class="title">
+slide-view组件展示：
+</view>
+<view class="slide">
+  <slide-view  width="750" height="110" slideWidth="500">
+    <view slot="left" class="l"><text class="text">这里是插入到组内容</text></view>
+    <view slot="right" class="r">
+      <view class='read'>标为已读</view>
+      <view class='delete'>删除</view>
+    </view>
+  </slide-view>
+</view>
+<!-- 
+属性名	类型	单位	默认值	是否必须	说明
+width	Number	rpx	显示屏幕的宽度	是	slide-view组件的宽度
+height	Number	rpx	0	是	slide-view组件的高度
+slide-width	Number	rpx	0	是	滑动展示区域的宽度（默认高度与slide-view相同） 
+-->
+
+
+<view class="title mt100">
+延迟加载组件展示：
+</view>
+<recycle-view batch="{{batchSetRecycleData}}" id="recycleId">
+  <view slot="before">长列表前面的内容</view>
+  <recycle-item wx:for="{{recycleList}}" wx:key="id">
+    <view>
+        <image style='width:400rpx;height:300rpx;float:left;' src="{{item.src}}"></image><br/>
+      {{index+1}}. {{1111}}<br/>
+    </view>
+  </recycle-item>
+  <view slot="after">长列表后面的内容</view>
+</recycle-view>

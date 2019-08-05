@@ -15,7 +15,8 @@
    "pages/wxmlApi/wxmlApi",
    "pages/webView/webView",
    "pages/wxs/wxs",
-   "pages/comp/comp"
+   "pages/comp/comp",
+    "pages/compLib/compLib"
     
 
   ],
